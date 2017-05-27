@@ -1,0 +1,2 @@
+# BurgerSolutionSequelized
+Sequelize homework
