@@ -12,6 +12,8 @@ The solution builds on an Express and MySQL framework. No additional
 
 This is primarily a back-end server project.
 
+My how was to turn this into an app I could actually use... a cumulative calorie counter for each day.
+
 ## Viewing the App
 The GitHub repository shows the work on the assignment.
 https://github.com/tomcali/BurgerSolutionSequelized.git
@@ -91,3 +93,42 @@ We exit from the command line interface. Return to the main directory and execut
 We run the application and check that we can add a treat item with default calories of 500. This works as well.
 
 Selecting times to eat moves them to the right as desired, eliminating them from the left-hand-side list.
+
+The coversion to sequelize begins in the config/connection.js file with
+
+```
+
+var Sequelize = require('sequelize');
+var connection = new Sequelize('myburgers_db', 'root', '');
+
+var Burger = connection.define(
+    'burger', {
+      id: {
+        type: Sequelize.INTEGER,
+        unique: true,
+        allowNull: false,
+        primaryKey: true
+      },
+      burger_name: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      devoured: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: 'FALSE'
+      },
+      calories: {
+        type: Sequelize.INTEGER,
+        defaultValue: 500
+      }
+    }
+);
+
+connection.sync().then (function() {
+    Burger.findAll().then (function (burger) {
+        console.log(burger.dataValues);
+    });
+});
+```
+
+Did not get very far with the sequelize conversion, as we received errors at this point.
