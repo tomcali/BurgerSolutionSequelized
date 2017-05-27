@@ -14,7 +14,7 @@ This is primarily a back-end server project.
 
 ## Viewing the App
 The GitHub repository shows the work on the assignment.
-https://github.com/tomcali/daily-diet.git
+https://github.com/tomcali/BurgerSolutionSequelized.git
 
 ## Requirements
 The requirements for this assignment may be found in the file homework_instructions.md, which is enclosed in the repository under documentation/homework-14-Express-Handlebars.
@@ -32,16 +32,24 @@ including .gitignore
 with 'npm init -y'
 
 * Within package.json, we set up the start file with nodemon server.js
-so that we can execute easily with 'npm start' and not have a need to refresh
+so that we can execute easily with 'npm start' and not have to refresh
  the browser window after changes in the program.
 
-* Working within the repository directory...
+
+* Working within the BurgerSolutionSequelized directory...
 Started the MySQL database server with the command 'mysql.server start'
-We could view the MySQL database server using CLI commands via 'mysql -u root -p'
-Or we could utilize Sequel Pro.
+Set up the MySQL database server using CLI commands via 'mysql -u root -p'
+ Key files here were schema.sql and seeds.sql, which were executed
+ from the CLI with the source command. These were used to create a
+ database myburgers_db with a table burgers with fourteen of my favorite foods.
+ Columns are the food name and calorie count in the portions usually eaten.
+  The additional field devoured (a BOOL or tinyint) was included with the default value of FALSE ('0') to maintain consistency
+  with the BurgerSolution work we are building on.
+ You will see pretty much the full range of my daily diet, which as nothing to do with burgers.
+We also utilize Sequel Pro in reviewing the database.
 
 * We are using a Model-View-Controller design, following the setup established in the BurgerSolution.
 * Added numerous node packages with
-'npm install --save [package-name]'  Key packages here were express mysql and sequelize.
+'npm install --save [package-name]'  Key packages here were express mysql and sequelize. Directories models and controllers were set up to accommodate this MVC structure.
 
 * We are now doing development within the WebStorm IDE.
