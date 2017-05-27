@@ -1,7 +1,7 @@
 body {
   width: 99%;
   height: 900px;
-  background-color: #fc6;
+  background-color: #0000FF;
 }
 
 #top-bar {
@@ -37,6 +37,7 @@ body {
   margin-top: 30px;
   margin-bottom: 30px;
   text-align: center;
+  color: #ffffff;
 }
 
 #enter_text {
@@ -64,5 +65,9 @@ body {
 }
 
 h1 {
-  color: #f30;
+  color: #ffffff;
+}
+
+p {
+  color: #ffffff;
 }

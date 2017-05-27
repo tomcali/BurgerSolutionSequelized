@@ -1,6 +1,6 @@
 # Week 15 Homework: BurgerSolutionSequelized
 We are asked to sequelize the 'Burger' homework, so I began with the
- BurgerSolution posted to the Homeworks directory.
+ BurgerSolution posted to the Homeworks directory. I modified the database to include my favorite foods, which have nothing to do with burgers.
 
 The solution builds on an Express and MySQL framework. No additional
   functions are being developed. We just try to make everything work
@@ -52,4 +52,42 @@ We also utilize Sequel Pro in reviewing the database.
 * Added numerous node packages with
 'npm install --save [package-name]'  Key packages here were express mysql and sequelize. Directories models and controllers were set up to accommodate this MVC structure.
 
+* We tried to maintain earier direct mysql work as quick reference files, giving them file names with
+the characters '-mysql-direct' added.
+
 * We are now doing development within the WebStorm IDE.
+
+## Testing
+We set up the database with 14 initial food items:
+mysql.server start
+mysql -u root -p
+source schema.sql
+source seeds.sql
+source select.sql
+
+Database changed
++----+-----------------------------------------------------------------------------------------------+----------+----------+
+| id | burger_name                                                                                   | devoured | calories |
++----+-----------------------------------------------------------------------------------------------+----------+----------+
+|  1 | Oatmean (1/2 Cup)                                                                             |        0 | 150      |
+|  2 | Nature Valley Oats n Honey Granola Bars (2 bars)                                              |        0 | 190      |
+|  3 | Bimbo Multi Grain Cereal Bar with Chia (1 package)                                            |        0 | 170      |
+|  4 | Organics Tomato Basil Soup (1 cup)                                                            |        0 | 90       |
+|  5 | Organics Southwestern Black Bean Soup (1 cup)                                                 |        0 | 120      |
+|  6 | Springfield California Sun-Dried Seedless Raisins (1 28-gram box)                             |        0 | 90       |
+|  7 | Diet Milk Shake (1/2 cup Skim Milk, 2 scoops protien powder, 2 scoops powdered peanut butter) |        0 | 270      |
+|  8 | 1/3 Footlong Roast Veggie Delite Subway Sandwich                                              |        0 | 150      |
+|  9 | 1/3 Footlong Oven Roasted Chicken Subway Sandwich                                             |        0 | 210      |
+| 10 | 1/3 Footlong Classic Tuna Subway Sandwich                                                     |        0 | 150      |
+| 11 | 1/3 Footlong Carved Turkey Subway Sandwich                                                    |        0 | 170      |
+| 12 | Frozen Yogurt (1 cup)                                                                         |        0 | 130      |
+| 13 | Orange Juice (1 cup)                                                                          |        0 | 110      |
+| 14 | Mighty Mago Juice (1 bottle)                                                                  |        0 | 290      |
++----+-----------------------------------------------------------------------------------------------+----------+----------+
+14 rows in set (0.00 sec)
+
+We exit from the command line interface. Return to the main directory and execute the applicaiton via npm start
+
+We run the application and check that we can add a treat item with default calories of 500. This works as well.
+
+Selecting times to eat moves them to the right as desired, eliminating them from the left-hand-side list.
